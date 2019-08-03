@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xmas Day</title>
+	<style type="text/css">
+		body{
+			background-color: #f1f4f9;
+			font-family: century gothic;
+		}
+		button{
+				width: 150px;
+				height: 30px;
+				line-height: 30px;
+				border:0;
+				border-radius: 30px;
+				background-color:#0c5eb5;
+				color: white;
+				box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+				margin-top: 10px;}
+
+	</style>
+</head>
+<body> <center>
+	<h6>Click the button below to show the number of day(s) before Christmas</h6>
+	<button onclick="show()">Click here</button>
+	<p id="demo" ></p>
+
+<script>  
+	var today, someday, text, xx=3;
+	function show(argument) {	
+	today = new Date();
+	someday = new Date(today.getFullYear(), 11, 25);
+		y = 1000 * 60 * 60 * 24;
+		if (today.getMonth()==11 && today.getDate()>25) {
+			someday.setFullYear(today.getFullYear()+1)
+		}
+	text=Math.ceil(((Date.parse(someday) - Date.parse(today)) / y))
+	if (today.getMonth()==11 && today.getDate()==25) {
+		demo.innerHTML = "Hurray!!! Today is Christmas. <br> I wish you merry Christmas" 
+	 } else {
+	demo.innerHTML = "There are "+ text +" day(s) before Christmas";}
+	}	
+</script> 
+</center>  
+</body>
+</html>
